@@ -8,7 +8,7 @@ import org.openqa.selenium.*;
 
 public class LoginTrelloTest extends TestBase {
 
-    @Test
+    @Test(priority = 1)
     public void LoginTrelloTest() {
         clickLogInButton();
         enterUserName("elena.telran@yahoo.com");
@@ -25,7 +25,7 @@ public class LoginTrelloTest extends TestBase {
         confirmLogInButton();
     }
 
-    @Test
+    @Test(priority = 2)
     public void LoginTrelloTestEmptyFields() {
         clickLogInButton();
         enterUserName("");

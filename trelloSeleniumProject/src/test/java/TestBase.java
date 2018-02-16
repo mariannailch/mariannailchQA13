@@ -55,6 +55,13 @@ public class TestBase {
         wd.get("https://trello.com/");
     }
 
+    public void login(String user, String pwd){
+        clickLogInButton();
+        enterUserName(user);
+        enterPassword(pwd);
+        confirmLogInButton();
+    }
+
     @AfterClass
     public void tearDown() {
         wd.quit();
