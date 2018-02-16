@@ -34,7 +34,7 @@ public class CreateNewList extends TestBase {
     }
 
     private void selectBoard() {
-        wd.findElement(By.xpath("//html//li[11]/a[1]/span[2]")).click();
+        wd.findElement(By.xpath("//html//li[10]/a[1]/span[2]")).click();
     }
     private void clickAddList() {
         wd.findElement(By.xpath("//span[@class='placeholder js-open-add-list']")).click();
