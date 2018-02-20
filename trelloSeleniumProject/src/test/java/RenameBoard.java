@@ -10,7 +10,7 @@ public class RenameBoard extends TestBase {
     @Test
     public void renameBoard(){
         selectBoard();
-        selectNameOfBoard();
+        clickOnTheTitle();
         enterNewBoardName("myBoard");
         clickRenameButton();
 
@@ -26,8 +26,8 @@ public class RenameBoard extends TestBase {
         wd.findElement(By.xpath("//input[@class='js-board-name js-autofocus']")).sendKeys(newName);
     }
 
-    private void selectNameOfBoard() {
-        wd.findElement(By.xpath("//span[@class='board-header-btn-text'][contains(text(),'myBoard')]")).click();
+    private void clickOnTheTitle() {
+        wd.findElement(By.cssSelector("a.board-header-btn.board-header-btn-name.js-rename-board")).click();
     }
 
     private void selectBoard() {
