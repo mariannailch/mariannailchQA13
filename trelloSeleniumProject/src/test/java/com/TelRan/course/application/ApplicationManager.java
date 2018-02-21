@@ -84,10 +84,6 @@ public class ApplicationManager {
         wd.findElement(By.xpath("//span[@class='board-tile-details is-badged']//span[@title='myBoard']")).click();
     }
 
-    public void clickOnEmpyField() {
-        wd.findElement(By.xpath("//html//div[@id='board']/div[1]")).click();
-    }
-
     public void enterNewListName(ListData listData) {
         wd.findElement(By.cssSelector("textarea.list-header-name.mod-list-name.js-list-name-input")).click();
         wd.findElement(By.cssSelector("textarea.list-header-name.mod-list-name.js-list-name-input")).clear();

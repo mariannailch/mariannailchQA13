@@ -14,7 +14,6 @@ public class RenameList extends TestBase {
         app.selectBoard();
         app.selectListTitle();
         app.enterNewListName(new ListData("ffffffff"));
-        app.clickOnEmpyField();
         app.returnToHomePage();
     }
 }
