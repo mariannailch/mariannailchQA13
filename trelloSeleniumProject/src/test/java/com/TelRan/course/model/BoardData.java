@@ -1,4 +1,4 @@
-package com.TelRan.cource.model;
+package com.TelRan.course.model;
 
 public class BoardData {
     private final String name;

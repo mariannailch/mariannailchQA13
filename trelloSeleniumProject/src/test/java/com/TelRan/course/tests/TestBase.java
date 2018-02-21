@@ -1,6 +1,6 @@
-package com.TelRan.cource.tests;
+package com.TelRan.course.tests;
 
-import com.TelRan.cource.application.ApplicationManager;
+import com.TelRan.course.application.ApplicationManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 

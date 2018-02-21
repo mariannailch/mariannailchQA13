@@ -1,19 +1,21 @@
-package com.TelRan.cource.tests;
+package com.TelRan.course.tests;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class DeleteList extends TestBase {
+public class DeleteBoard extends TestBase {
     @BeforeClass
     public void preConditions(){
         app.login("elena.telran@yahoo.com", "12345.com");
     }
     @Test
-    public void deleteList(){
+    public void deleteBoard(){
         app.selectBoard();
-        app.clickListMenuButton();
-        app.clickArchiveThisList();
+        app.clickShowMenu();
+        app.clickMoreButton();
+        app.clickCloseBoard();
+        app.submitCloseBoard();
+        app.deleteClosedBoard();
         app.returnToHomePage();
-
     }
 }

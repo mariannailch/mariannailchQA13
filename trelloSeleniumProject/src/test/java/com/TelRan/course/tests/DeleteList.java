@@ -1,19 +1,18 @@
-package com.TelRan.cource.tests;
+package com.TelRan.course.tests;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class RenameBoard extends TestBase {
+public class DeleteList extends TestBase {
     @BeforeClass
     public void preConditions(){
         app.login("elena.telran@yahoo.com", "12345.com");
     }
     @Test
-    public void renameBoard(){
+    public void deleteList(){
         app.selectBoard();
-        app.clickOnTheTitle();
-        app.enterNewBoardName("myBoard");
-        app.clickRenameButton();
+        app.clickListMenuButton();
+        app.clickArchiveThisList();
         app.returnToHomePage();
 
     }

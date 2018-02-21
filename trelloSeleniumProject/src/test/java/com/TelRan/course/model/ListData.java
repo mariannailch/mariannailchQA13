@@ -1,4 +1,4 @@
-package com.TelRan.cource.model;
+package com.TelRan.course.model;
 
 public class ListData {
     private final String newListName;

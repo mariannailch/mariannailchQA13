@@ -1,6 +1,6 @@
-package com.TelRan.cource.tests;
+package com.TelRan.course.tests;
 
-import com.TelRan.cource.model.ListData;
+import com.TelRan.course.model.ListData;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

@@ -1,4 +1,4 @@
-package com.TelRan.cource.tests;
+package com.TelRan.course.tests;
 
 import org.testng.annotations.Test;
 

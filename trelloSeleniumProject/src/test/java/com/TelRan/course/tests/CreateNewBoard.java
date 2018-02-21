@@ -1,6 +1,6 @@
-package com.TelRan.cource.tests;
+package com.TelRan.course.tests;
 
-import com.TelRan.cource.model.BoardData;
+import com.TelRan.course.model.BoardData;
 import org.testng.annotations.Test;
 
 public class CreateNewBoard extends TestBase {

@@ -1,7 +1,7 @@
-package com.TelRan.cource.application;
+package com.TelRan.course.application;
 
-import com.TelRan.cource.model.BoardData;
-import com.TelRan.cource.model.ListData;
+import com.TelRan.course.model.BoardData;
+import com.TelRan.course.model.ListData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
