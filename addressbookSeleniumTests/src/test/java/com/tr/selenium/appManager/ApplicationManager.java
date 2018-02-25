@@ -124,7 +124,7 @@ public class ApplicationManager {
         wd.findElement(By.name("selected[]")).click();
     }
 
-    public void DeleteContact() {
+    public void deleteContact() {
         wd.findElement(By.xpath("//html//div[2]/input[1]")).click();
         wd.switchTo().alert().accept();
     }
