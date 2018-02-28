@@ -6,15 +6,15 @@ import org.testng.annotations.Test;
 public class ContactRenameTests extends TestBase {
     @Test
     public void contactRenameTest(){
-        app.chooseContact();
-        app.clickEditButton();
-        app.fillContactForm(new ContactData()
+        app.getContactHelper().chooseContact();
+        app.getContactHelper().clickEditButton();
+        app.getContactHelper().fillContactForm(new ContactData()
                 .setFirstname("sofa")
                 .setLastname("cohen")
                 .setHomePhoneNumber("0547865976")
                 .setAddress("Tel Aviv"));
-        app.clickUpdateButton();
-        app.returnToHomePage();
+        app.getContactHelper().clickUpdateButton();
+        app.getContactHelper().returnToHomePage();
 
     }
 

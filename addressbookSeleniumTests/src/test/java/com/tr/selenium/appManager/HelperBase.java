@@ -5,6 +5,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class HelperBase {
     FirefoxDriver wd;
+
+    public HelperBase(FirefoxDriver wd) {
+        this.wd = wd;
+    }
+
     public void click(By locator) {
         wd.findElement(locator).click();
     }

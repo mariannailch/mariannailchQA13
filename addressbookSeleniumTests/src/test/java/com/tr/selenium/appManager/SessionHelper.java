@@ -3,13 +3,10 @@ package com.tr.selenium.appManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class SessionHelper {
-
-    private FirefoxDriver wd;
+public class SessionHelper extends HelperBase {
 
     public SessionHelper(FirefoxDriver wd) {
-
-        this.wd = wd;
+        super(wd);
     }
 
     public void login(String user, String password) {

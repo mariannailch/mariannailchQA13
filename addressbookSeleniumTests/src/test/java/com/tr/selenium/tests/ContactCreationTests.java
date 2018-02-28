@@ -6,14 +6,14 @@ import org.testng.annotations.Test;
 public class ContactCreationTests extends TestBase {
     @Test
     public void contactCreationTest(){
-        app.goToAddNewContactPage();
-        app.fillContactForm(new ContactData()
-                .setFirstname("Vasya")
-                .setLastname("Pupkin")
-                .setHomePhoneNumber("0549785768")
-                .setAddress("rehovot"));
-        app.submitContactCreation();
-        app.returnToHomePage();
+        app.getContactHelper().goToAddNewContactPage();
+        app.getContactHelper().fillContactForm(new ContactData()
+                .setFirstname("Vova")
+                .setLastname("Levi")
+                .setHomePhoneNumber("0549756968")
+                .setAddress("ness ziona"));
+        app.getContactHelper().submitContactCreation();
+        app.getContactHelper().returnToHomePage();
 
     }
 }
