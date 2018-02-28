@@ -7,7 +7,7 @@ package com.tr.selenium.tests;
 public class GroupModificationTests extends TestBase {
     @Test
     public void groupModificationTest(){
-        app.goToGroupsPage();
+        app.getNavigationHelper().goToGroupsPage();
         int before = app.getGroupHelper().getGroupCount();
         app.getGroupHelper().selectGroup();
         app.getGroupHelper().initGroupModification();

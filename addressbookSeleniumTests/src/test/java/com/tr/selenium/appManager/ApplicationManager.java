@@ -35,10 +35,6 @@ public class ApplicationManager {
         sessionHelper.login("admin", "secret");
     }
 
-    public void goToGroupsPage() {
-        wd.findElement(By.linkText("groups")).click();
-    }
-
     public void openSite() {
         wd.get("http://localhost/addressbook/");
     }
