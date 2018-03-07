@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 public class ContactCreationTests extends TestBase {
     @Test
     public void contactCreationTest(){
-        app.getContactHelper().goToAddNewContactPage();
         int before = app.getContactHelper().getContactCount();
+        app.getContactHelper().goToAddNewContactPage();
         app.getContactHelper().fillContactForm(new ContactData()
                 .setFirstname("Vova")
                 .setLastname("Levi")
