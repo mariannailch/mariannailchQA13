@@ -3,7 +3,6 @@ package com.tr.selenium.appManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class NavigationHelper extends HelperBase {
     public NavigationHelper(WebDriver wd) {
@@ -24,14 +23,5 @@ public class NavigationHelper extends HelperBase {
             return;
         }
         click(By.linkText("groups"));
-    }
-
-    public boolean isElementPresent(By locator) {
-        try {
-            wd.findElement(locator);
-            return true;
-        } catch (NoSuchElementException ex) {
-            return false;
-        }
     }
 }

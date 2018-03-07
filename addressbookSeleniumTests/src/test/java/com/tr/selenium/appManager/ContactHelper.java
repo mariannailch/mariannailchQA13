@@ -3,7 +3,6 @@ package com.tr.selenium.appManager;
 import com.tr.selenium.model.ContactData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ContactHelper extends HelperBase{
 
@@ -50,11 +49,16 @@ public class ContactHelper extends HelperBase{
         wd.switchTo().alert().accept();
     }
 
+    public void goToAddNewContactPage() {
+        click(By.xpath("//a[@href='edit.php']"));
+    }
+
     public boolean isContactExist() {
         return isElementPresent((By.name("selected[]")));
     }
 
     public void createContact() {
+        goToAddNewContactPage();
         fillContactForm(new ContactData()
                 .setFirstname("Vova")
                 .setLastname("Levi")
