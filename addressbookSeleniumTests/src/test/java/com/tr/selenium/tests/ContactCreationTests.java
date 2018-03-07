@@ -8,7 +8,7 @@ public class ContactCreationTests extends TestBase {
     @Test
     public void contactCreationTest(){
         int before = app.getContactHelper().getContactCount();
-        app.getContactHelper().goToAddNewContactPage();
+        app.getNavigationHelper().goToAddNewContactPage();
         app.getContactHelper().fillContactForm(new ContactData()
                 .setFirstname("Vova")
                 .setLastname("Levi")

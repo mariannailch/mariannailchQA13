@@ -10,9 +10,6 @@ public class ContactHelper extends HelperBase{
     public ContactHelper(WebDriver wd) {
         super(wd);
     }
-    public void goToAddNewContactPage() {
-        click(By.xpath("//a[@href='edit.php']"));
-    }
 
     public void fillContactForm(ContactData contactData) {
         type(By.name("firstname"),contactData.getFirstname());
