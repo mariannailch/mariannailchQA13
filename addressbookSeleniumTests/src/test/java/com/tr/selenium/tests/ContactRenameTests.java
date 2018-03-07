@@ -1,11 +1,13 @@
 package com.tr.selenium.tests;
 
 import com.tr.selenium.model.ContactData;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ContactRenameTests extends TestBase {
     @Test
     public void contactRenameTest(){
+        int before = app.getContactHelper().getContactCount();
         app.getContactHelper().chooseContact();
         app.getContactHelper().clickEditButton();
         app.getContactHelper().fillContactForm(new ContactData()
@@ -15,6 +17,8 @@ public class ContactRenameTests extends TestBase {
                 .setAddress("Tel Aviv"));
         app.getContactHelper().clickUpdateButton();
         app.getContactHelper().returnToHomePage();
+        int after = app.getContactHelper().getContactCount();
+        Assert.assertEquals(after, before);
 
     }
 

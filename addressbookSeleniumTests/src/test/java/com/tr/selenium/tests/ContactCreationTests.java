@@ -1,12 +1,14 @@
 package com.tr.selenium.tests;
 
 import com.tr.selenium.model.ContactData;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ContactCreationTests extends TestBase {
     @Test
     public void contactCreationTest(){
         app.getContactHelper().goToAddNewContactPage();
+        int before = app.getContactHelper().getContactCount();
         app.getContactHelper().fillContactForm(new ContactData()
                 .setFirstname("Vova")
                 .setLastname("Levi")
@@ -14,6 +16,8 @@ public class ContactCreationTests extends TestBase {
                 .setAddress("ness ziona"));
         app.getContactHelper().submitContactCreation();
         app.getContactHelper().returnToHomePage();
+        int after = app.getContactHelper().getContactCount();
+        Assert.assertEquals(after, before+1);
 
     }
 }

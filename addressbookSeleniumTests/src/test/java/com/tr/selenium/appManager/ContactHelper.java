@@ -21,6 +21,10 @@ public class ContactHelper extends HelperBase{
         type(By.name("address2"),contactData.getAddress());
     }
 
+    public int getContactCount() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
+
     public void submitContactCreation() {
         click(By.name("submit"));
     }
@@ -49,4 +53,17 @@ public class ContactHelper extends HelperBase{
         wd.switchTo().alert().accept();
     }
 
+    public boolean isContactExist() {
+        return isElementPresent((By.name("selected[]")));
+    }
+
+    public void createContact() {
+        fillContactForm(new ContactData()
+                .setFirstname("Vova")
+                .setLastname("Levi")
+                .setHomePhoneNumber("0549756968")
+                .setAddress("ness ziona"));
+        submitContactCreation();
+        returnToHomePage();
+    }
 }
