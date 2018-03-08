@@ -7,6 +7,9 @@ import org.testng.annotations.Test;
 public class ContactCreationTests extends TestBase {
     @Test
     public void contactCreationTest(){
+        if(!app.getContactHelper().isContactExist()){
+            app.getContactHelper().createContact();
+        }
         int before = app.getContactHelper().getContactCount();
         app.getNavigationHelper().goToAddNewContactPage();
         app.getContactHelper().fillContactForm(new ContactData()
