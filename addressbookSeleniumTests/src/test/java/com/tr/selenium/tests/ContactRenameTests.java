@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 public class ContactRenameTests extends TestBase {
     @Test
     public void contactRenameTest(){
+        app.getNavigationHelper().goToHomePage();
         if(!app.getContactHelper().isContactExist()) {
             app.getContactHelper().createContact();
         }

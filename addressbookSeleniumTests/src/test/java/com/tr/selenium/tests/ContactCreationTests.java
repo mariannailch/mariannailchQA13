@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 public class ContactCreationTests extends TestBase {
     @Test
     public void contactCreationTest(){
+        app.getNavigationHelper().goToHomePage();
         if(!app.getContactHelper().isContactExist()){
             app.getContactHelper().createContact();
         }

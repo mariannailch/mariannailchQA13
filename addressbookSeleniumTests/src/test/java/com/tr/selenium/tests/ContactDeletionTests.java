@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 public class ContactDeletionTests extends TestBase {
     @Test
     public void contactDeletionTest(){
+        app.getNavigationHelper().goToHomePage();
         if(!app.getContactHelper().isContactExist()){
             app.getContactHelper().createContact();
         }
