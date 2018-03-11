@@ -25,6 +25,7 @@ public class ApplicationManager {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         openSite();
+        login("elena.telran@yahoo.com", "12345.com");
     }
 
     public void confirmLogInButton() {
@@ -48,7 +49,7 @@ public class ApplicationManager {
     }
 
     public void clickLogInButton() {
-        wd.findElement(By.linkText("Log In")).click();
+        wd.findElement(By.xpath("//a[@href='/login']")).click();
     }
 
     public void openSite() {
@@ -63,7 +64,7 @@ public class ApplicationManager {
     }
 
     public void returnToHomePage() {
-        wd.findElement(By.cssSelector("span.header-btn-icon.icon-lg.icon-board-back-to-home.light")).click();
+        wd.findElement(By.xpath("//a[@class='header-logo js-home-via-logo']")).click();
     }
 
     public void clickRenameButton() {
@@ -85,28 +86,20 @@ public class ApplicationManager {
     }
 
     public void enterNewListName(ListData listData) {
-        wd.findElement(By.cssSelector("textarea.list-header-name.mod-list-name.js-list-name-input")).click();
-        wd.findElement(By.cssSelector("textarea.list-header-name.mod-list-name.js-list-name-input")).clear();
-        wd.findElement(By.cssSelector("textarea.list-header-name.mod-list-name.js-list-name-input")).sendKeys(listData.getNewListName());
+        wd.findElement(By.xpath("//div[@class='list-header-target js-editing-target']")).click();
+        wd.findElement(By.xpath("//div[@class='list-header-target js-editing-target']")).clear();
+        wd.findElement(By.xpath("//div[@class='list-header-target js-editing-target']")).sendKeys(listData.getNewListName());
     }
 
     public void selectListTitle() {
-        wd.findElement(By.xpath("//html//div[@id='board']/div[1]/div[1]/div[1]/div[1]")).click();
+        wd.findElement(By.xpath("//textarea[@class='list-header-name mod-list-name js-list-name-input']")).click();
 
-    }
-
-    public void createBoard() {
-        wd.findElement(By.cssSelector("button.primary")).click();
     }
 
     public void enterBoardName(BoardData boardData) {
-        wd.findElement(By.cssSelector("input.subtle-input")).click();
-        wd.findElement(By.cssSelector("input.subtle-input")).clear();
-        wd.findElement(By.cssSelector("input.subtle-input")).sendKeys(boardData.getName());
-    }
-
-    public void clickNewBoard() {
-        wd.findElement(By.xpath("//div[@class='js-react-root']//span[.='Create new board…']")).click();
+        wd.findElement(By.xpath("//input[@id='boardNewTitle']")).click();
+        wd.findElement(By.xpath("//input[@id='boardNewTitle']")).clear();
+        wd.findElement(By.xpath("//input[@id='boardNewTitle']")).sendKeys(boardData.getName());
     }
 
     public void enterListName(String name) {
@@ -124,19 +117,19 @@ public class ApplicationManager {
     }
 
     public void clickShowMenu() {
-        wd.findElement(By.xpath("//span[@class='board-header-btn-text u-text-underline'][contains(text(),'Show Menu')]")).click();
+        wd.findElement(By.xpath("//span[@class='icon-sm icon-overflow-menu-horizontal board-header-btn-icon']")).click();
     }
 
     public void deleteClosedBoard() {
-        wd.findElement(By.cssSelector("a.quiet.js-delete")).click();
+        wd.findElement(By.xpath("//a[@class='quiet js-delete']")).click();
     }
 
     public void submitCloseBoard() {
-        wd.findElement(By.cssSelector("input.js-confirm.full.negate")).click();
+        wd.findElement(By.xpath("//input[@class='js-confirm full negate']")).click();
     }
 
     public void clickCloseBoard() {
-        wd.findElement(By.cssSelector("a.board-menu-navigation-item-link.js-close-board")).click();
+        wd.findElement(By.xpath("//a[@class='board-menu-navigation-item-link js-close-board']")).click();
     }
 
     public void clickMoreButton() {
@@ -148,7 +141,7 @@ public class ApplicationManager {
     }
 
     public void clickListMenuButton() {
-        wd.findElement(By.cssSelector("a.list-header-extras-menu.dark-hover.js-open-list-menu")).click();
+        wd.findElement(By.xpath("//a[@class='board-menu-navigation-item-link js-open-more']")).click();
     }
 
     public void stop() {
@@ -159,5 +152,17 @@ public class ApplicationManager {
         wd.findElement(By.cssSelector("span.member-initials")).click();
         wd.findElement(By.cssSelector("a.js-logout")).click();
 
+    }
+
+    public void clickBoardsButton() {
+        wd.findElement(By.xpath("//span[@class='header-btn-icon icon-lg icon-board light']")).click();
+    }
+
+    public void clickCreateNewBoard() {
+        wd.findElement(By.xpath("//a[@class='quiet-button js-add-board']")).click();
+    }
+
+    public void clickSubmitButton() {
+        wd.findElement(By.xpath("//input[@class='primary wide js-submit']")).click();
     }
 }

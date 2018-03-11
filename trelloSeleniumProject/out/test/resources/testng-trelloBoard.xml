@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="TrelloBoard" >
+        <classes>
+            <class name="com.TelRan.course.tests.CreateNewBoard" />
+            <class name="com.TelRan.course.tests.RenameBoard" />
+            <class name="com.TelRan.course.tests.DeleteBoard" />
+        </classes>
+    </test>
+</suite>
