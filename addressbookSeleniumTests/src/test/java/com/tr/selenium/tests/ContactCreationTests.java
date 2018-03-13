@@ -4,6 +4,8 @@ import com.tr.selenium.model.ContactData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.File;
+
 public class ContactCreationTests extends TestBase {
     @Test
     public void contactCreationTest(){
@@ -13,11 +15,14 @@ public class ContactCreationTests extends TestBase {
         }
         int before = app.getContactHelper().getContactCount();
         app.getNavigationHelper().goToAddNewContactPage();
+        File photo = new File("addressbookSeleniumTests/src/test/resources/2014-03-22 10.57.26.jpg");
         app.getContactHelper().fillContactForm(new ContactData()
                 .setFirstname("Vova")
                 .setLastname("Levi")
                 .setHomePhoneNumber("0549756968")
-                .setAddress("ness ziona"));
+                .setAddress("ness ziona")
+                .setGroup("dds")
+        .setPhoto(photo));
         app.getContactHelper().submitContactCreation();
         app.getContactHelper().returnToHomePage();
         int after = app.getContactHelper().getContactCount();

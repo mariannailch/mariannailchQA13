@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tr.selenium.tests.GroupModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-03-09T09:46:54" hostname="User-PC" time="1.788">
+<testsuite name="com.tr.selenium.tests.GroupModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-03-13T17:37:42" hostname="User-PC" time="1.376">
   <properties/>
-  <testcase name="groupModificationTest" classname="com.tr.selenium.tests.GroupModificationTests" time="1.788"/>
+  <testcase name="groupModificationTest" classname="com.tr.selenium.tests.GroupModificationTests" time="1.376"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

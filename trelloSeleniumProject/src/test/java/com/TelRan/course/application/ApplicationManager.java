@@ -23,7 +23,7 @@ public class ApplicationManager {
 
     public void init() {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
-        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         openSite();
         login("elena.telran@yahoo.com", "12345.com");
     }

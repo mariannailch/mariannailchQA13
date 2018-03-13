@@ -3,6 +3,7 @@ package com.tr.selenium.appManager;
 import com.tr.selenium.model.ContactData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class ContactHelper extends HelperBase{
 
@@ -15,6 +16,8 @@ public class ContactHelper extends HelperBase{
         type(By.name("lastname"),contactData.getLastname());
         type(By.name("home"),contactData.getHomePhoneNumber());
         type(By.name("address2"),contactData.getAddress());
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        attach(By.name("photo"),contactData.getPhoto());
     }
 
     public int getContactCount() {
