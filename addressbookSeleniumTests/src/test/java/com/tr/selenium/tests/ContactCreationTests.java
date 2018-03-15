@@ -15,7 +15,7 @@ public class ContactCreationTests extends TestBase {
         }
         int before = app.getContactHelper().getContactCount();
         app.getNavigationHelper().goToAddNewContactPage();
-        File photo = new File("addressbookSeleniumTests/src/test/resources/2014-03-22 10.57.26.jpg");
+        File photo = new File("C:\\Users\\User\\Documents\\GitHub\\mariannailchQA13\\addressbookSeleniumTests\\src\\test\\resources\\2014-03-22 10.57.26.jpg");
         app.getContactHelper().fillContactForm(new ContactData()
                 .setFirstname("Vova")
                 .setLastname("Levi")

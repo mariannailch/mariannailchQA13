@@ -6,27 +6,27 @@ public class LoginTrelloTest extends TestBase {
 
     @Test(priority = 1)
     public void LoginTrelloTest() {
-        app.clickLogInButton();
-        app.enterUserName("elena.telran@yahoo.com");
-        app.enterPassword("12345.com");
-        app.confirmLogInButton();
-        app.logOut();
+        app.getSessionHelper().clickLogInButton();
+        app.getSessionHelper().enterUserName("elena.telran@yahoo.com");
+        app.getSessionHelper().enterPassword("12345.com");
+        app.getSessionHelper().confirmLogInButton();
+        app.getSessionHelper().logOut();
     }
 
     @Test
     public void LoginTrelloTestNotValid() {
-        app.clickLogInButton();
-        app.enterUserName("11111");
-        app.enterPassword("12345.com");
-        app.confirmLogInButton();
+        app.getSessionHelper().clickLogInButton();
+        app.getSessionHelper().enterUserName("11111");
+        app.getSessionHelper().enterPassword("12345.com");
+        app.getSessionHelper().confirmLogInButton();
     }
 
     @Test(priority = 2)
     public void LoginTrelloTestEmptyFields() {
-        app.clickLogInButton();
-        app.enterUserName("");
-        app.enterPassword("");
-        app.confirmLogInButton();
+        app.getSessionHelper().clickLogInButton();
+        app.getSessionHelper().enterUserName("");
+        app.getSessionHelper().enterPassword("");
+        app.getSessionHelper().confirmLogInButton();
 
     }
 

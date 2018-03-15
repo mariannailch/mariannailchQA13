@@ -19,12 +19,22 @@ task testBoard(type:Test) {
     useTestNG {
         suites 'src/test/resources/testng-trelloBoard.xml'
     }
-    //systemProperty 'browser', "${browser}"
+    if(project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if(project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
 }
 
 task testList(type: Test) {
     useTestNG {
         suites 'src/test/resources/testng-trelloList.xml'
     }
-    //systemProperty 'browser', "${browser}"
+    if(project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if(project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
 }

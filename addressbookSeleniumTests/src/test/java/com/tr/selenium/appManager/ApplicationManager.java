@@ -29,7 +29,7 @@ public class ApplicationManager {
 
     public void start() throws IOException {
         String target = System.getProperty("target", "local");
-        properties.load(new FileReader(String.format("addressbookSeleniumTests/src/test/resources/%s.properties", target)));
+        properties.load(new FileReader(String.format("C:\\Users\\User\\Documents\\GitHub\\mariannailchQA13\\addressbookSeleniumTests\\src\\test\\resources\\%s.properties", target)));
         //String browser = BrowserType.CHROME;
         if(browser.equals(BrowserType.FIREFOX)){
             wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));

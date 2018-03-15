@@ -1,13 +1,36 @@
 package com.TelRan.course.model;
 
-public class ListData {
-    private final String newListName;
+import java.io.File;
 
-    public ListData(String newListName) {
-        this.newListName = newListName;
+public class ListData {
+    private String name;
+    private String newname;
+    File photo;
+
+    public File getPhoto() {
+        return photo;
     }
 
-    public String getNewListName() {
-        return newListName;
+    public ListData setPhoto(File photo) {
+        this.photo = photo;
+        return this;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ListData setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public String getNewname() {
+        return newname;
+    }
+
+    public ListData setNewname(String newname) {
+        this.newname = newname;
+        return this;
     }
 }

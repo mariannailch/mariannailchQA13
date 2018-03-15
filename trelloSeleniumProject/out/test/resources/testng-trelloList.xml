@@ -3,9 +3,9 @@
 <suite name="Suite1" verbose="1" >
     <test name="TrelloList" >
         <classes>
-            <class name="com.TelRan.course.tests.CreateNewList" />
-            <class name="com.TelRan.course.tests.RenameList" />
-            <class name="com.TelRan.course.tests.DeleteList" />
+            <class name="com.TelRan.course.tests.ListCreationTests" />
+            <class name="com.TelRan.course.tests.ListRenameTests" />
+            <class name="com.TelRan.course.tests.ListDeletionTests" />
         </classes>
     </test>
 </suite>
