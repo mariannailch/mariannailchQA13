@@ -40,7 +40,7 @@ public class ApplicationManager {
         }else if(browser.equals(BrowserType.IE)){
             wd = new InternetExplorerDriver();
         }
-        wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         boardHelper = new BoardHelper(wd);
         sessionHelper = new SessionHelper(wd);
         listHelper = new ListHelper(wd);
@@ -54,9 +54,9 @@ public class ApplicationManager {
         wd.get(url);
     }
 
-    public void stop() {
-        wd.quit();
-    }
+//    public void stop() {
+//        wd.quit();
+//    }
 
     public BoardHelper getBoardHelper() {
         return boardHelper;

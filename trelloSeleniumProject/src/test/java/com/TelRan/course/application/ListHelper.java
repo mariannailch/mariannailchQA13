@@ -11,17 +11,6 @@ public class ListHelper extends HelperBase {
         super(wd);
     }
 
-    File photo;
-
-    public File getPhoto() {
-        return photo;
-    }
-
-    public ListHelper setPhoto(File photo) {
-        this.photo = photo;
-        return this;
-    }
-
     public void enterNewListName(ListData listData) {
         wd.findElement(By.xpath("//textarea[@class='list-header-name mod-list-name js-list-name-input']")).clear();
         wd.findElement(By.xpath("//textarea[@class='list-header-name mod-list-name js-list-name-input']")).sendKeys(listData.getNewname());
@@ -52,23 +41,5 @@ public class ListHelper extends HelperBase {
 
     public void clickListMenuButton() {
         wd.findElement(By.xpath("//span[@class='icon-sm icon-overflow-menu-horizontal']")).click();
-    }
-
-    public void addNewCard() {
-        wd.findElement(By.xpath("//a[@class='open-card-composer js-open-card-composer']")).click();
-        wd.findElement((By.xpath("//textarea[@class='list-card-composer-textarea js-card-title']"))).clear();
-        wd.findElement((By.xpath("//textarea[@class='list-card-composer-textarea js-card-title']"))).sendKeys("card");
-    }
-
-    public void clickOnCard() {
-        wd.findElement(By.xpath("//span[@class='list-card-title js-card-name']")).click();
-    }
-
-    public void clickOnAttachments() {
-        wd.findElement(By.xpath("//a[@class='comment-box-options-item js-comment-add-attachment']")).click();
-    }
-
-    public void clickAddNewCard() {
-        wd.findElement(By.xpath("//input[@class='primary confirm mod-compact js-add-card']")).click();
     }
 }

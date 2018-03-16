@@ -11,13 +11,13 @@ public class PhotoUploadTests extends TestBase {
 
             app.getBoardHelper().selectBoard();
             if(!app.isCardExist()){
-                app.getListHelper().addNewCard();
-                app.getListHelper().clickAddNewCard();
+                app.getFileHelper().addNewCard();
+                app.getFileHelper().clickAddNewCard();
             }else {
 
-                app.getListHelper().clickOnCard();
-                app.getListHelper().clickOnAttachments();
-                File photo = new File("C:\\Users\\User\\Documents\\GitHub\\mariannailchQA13\\trelloSeleniumProject\\src\\test\\resources\\2014-03-22 10.57.26.jpg");
+                app.getFileHelper().clickOnCard();
+                app.getFileHelper().clickOnAttachments();
+                File photo = new File("C:\\Users\\User\\Documents\\GitHub\\mariannailchQA13\\trelloSeleniumProject\\src\\test\\resources\\stars.jpg");
                 app.getFileHelper().addAttachment(new FileData().setPhoto(photo));
 
             }

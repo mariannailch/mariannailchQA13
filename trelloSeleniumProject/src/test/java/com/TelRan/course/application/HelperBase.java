@@ -16,7 +16,7 @@ public class HelperBase {
         this.wd = wd;
     }
 
-    public static boolean isAlertPresent(FirefoxDriver wd) {
+    public static boolean isAlertPresent(WebDriver wd) {
         try {
             wd.switchTo().alert();
             return true;
