@@ -1,9 +1,6 @@
 package com.TelRan.course.application;
 
-import com.TelRan.course.model.BoardData;
-import com.TelRan.course.model.ListData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -11,9 +8,9 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +19,7 @@ public class ApplicationManager {
     private SessionHelper sessionHelper;
     private ListHelper listHelper;
     private NavigationHelper navigationHelper;
+    private FileHelper fileHelper;
     WebDriver wd;
     private String browser;
     Properties properties;
@@ -47,6 +45,7 @@ public class ApplicationManager {
         sessionHelper = new SessionHelper(wd);
         listHelper = new ListHelper(wd);
         navigationHelper = new NavigationHelper(wd);
+        fileHelper = new FileHelper(wd);
         openSite(properties.getProperty("web.baseUrl"));
         sessionHelper.login(properties.getProperty("web.adminLogin"),properties.getProperty("web.adminPwd"));
     }
@@ -73,5 +72,21 @@ public class ApplicationManager {
 
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
+    }
+
+    public FileHelper getFileHelper() {
+        return fileHelper;
+    }
+
+    public boolean isCardExist() {
+        return isElementPresent(By.cssSelector("span.list-card-title.js-card-name"));
+    }
+    public boolean isElementPresent(By locator) {
+        try {
+            wd.findElement(locator);
+            return true;
+        } catch (NoSuchElementException ex) {
+            return false;
+        }
     }
 }

@@ -1,20 +1,36 @@
 package com.TelRan.course.tests;
 
-import com.TelRan.course.model.ListData;
-import org.openqa.selenium.By;
+import com.TelRan.course.model.FileData;
 import org.testng.annotations.Test;
 
 import java.io.File;
 
 public class PhotoUploadTests extends TestBase {
-        @Test
+        @Test (enabled = false)
         public void photoUploadTest(){
-            File photo = new File("C:\\Users\\User\\Documents\\GitHub\\mariannailchQA13\\trelloSeleniumProject\\src\\test\\resources\\stars.jpg");
+
             app.getBoardHelper().selectBoard();
-            app.getListHelper().addNewCard();
-            app.getListHelper().clickAddNewCard();
-            app.getListHelper().clickOnCard();
-            app.getListHelper().clickOnAttachments();
-            app.getListHelper().addAttachment(new ListData().setPhoto(photo));
+            if(!app.isCardExist()){
+                app.getListHelper().addNewCard();
+                app.getListHelper().clickAddNewCard();
+            }else {
+
+                app.getListHelper().clickOnCard();
+                app.getListHelper().clickOnAttachments();
+                File photo = new File("C:\\Users\\User\\Documents\\GitHub\\mariannailchQA13\\trelloSeleniumProject\\src\\test\\resources\\2014-03-22 10.57.26.jpg");
+                app.getFileHelper().addAttachment(new FileData().setPhoto(photo));
+
+            }
+
         }
+
+        @Test
+        public void profilePhotoUploadTest(){
+            app.getFileHelper().clickOnProfileIcon();
+            app.getFileHelper().clickProfile();
+            app.getFileHelper().clickChangePhoto();
+            File photo = new File("trelloSeleniumProject\\src\\test\\resources\\2014-03-22 10.57.26.jpg");
+            app.getFileHelper().addAttachment(new FileData().setPhoto(photo));
+        }
+
     }

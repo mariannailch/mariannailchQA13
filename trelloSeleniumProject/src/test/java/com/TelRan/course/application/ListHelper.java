@@ -53,9 +53,6 @@ public class ListHelper extends HelperBase {
     public void clickListMenuButton() {
         wd.findElement(By.xpath("//span[@class='icon-sm icon-overflow-menu-horizontal']")).click();
     }
-    public void addAttachment(ListData listData){
-        attach(By.xpath("//li[@class='uploader']"),listData.getPhoto());
-    }
 
     public void addNewCard() {
         wd.findElement(By.xpath("//a[@class='open-card-composer js-open-card-composer']")).click();
@@ -68,7 +65,7 @@ public class ListHelper extends HelperBase {
     }
 
     public void clickOnAttachments() {
-        wd.findElement(By.xpath("//a[@class='button-link js-attach']")).click();
+        wd.findElement(By.xpath("//a[@class='comment-box-options-item js-comment-add-attachment']")).click();
     }
 
     public void clickAddNewCard() {
