@@ -16,3 +16,4 @@ gradle-app.setting
 trelloSeleniumProject/out/test/classes/CreateNewBoard.class
 .idea/modules/gooleTest.iml
 .idea/workspace.xml
+*.log
